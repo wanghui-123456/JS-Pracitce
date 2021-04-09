@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='c' style="color:blue" >ttttt</p>
+    <p>Hello lihuangying!</p>
+    <button>
+        切换颜色
+    </button>
+    <script>
+       var changecolor=document.getElementById('c');
+       var Button=document.getElementsByTagName('button');
+       changecolor.style.color='red';
+       changecolor.style.fontSize='42px';
+       changecolor.style.fontStyle='italic';
+       console.log(changecolor);
+       console.dir(changecolor);
+       console.log(typeof Button);
+       console.dir(Button[0]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            margin: 100px auto;
+            background-color: #f3f5f5;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        tr,
+        td {
+            border: 1px solid gray;
+        }
+
+        th {
+            border: 2px solid gray;
+            height: 30px;
+            background-color: rgb(192, 185, 185);
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Manipulate</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script>
+    var datas = [
+        {
+            name: '熊大',
+            subject: '英语',
+            score: 50,
+        },
+        {
+            name: '熊二',
+            subject: '英语',
+            score: 60,
+        },
+        {
+            name: '光头强',
+            subject: '英语',
+            score: 70,
+        },
+    ];
+    //往tbody里创建行
+    var tbody = document.querySelector('tbody');
+    for (var i = 0; i < datas.length; i++) {
+        var tr = document.createElement('tr');
+        tbody.appendChild(tr);
+        //创建单元格td
+        for (var k in datas[i]) {
+            var td = document.createElement('td');
+            td.innerHTML = datas[i][k];
+            tr.appendChild(td);
+        }
+        var td = document.createElement('td');
+        td.innerHTML = '<a href="javascript:;">删除</a>';
+        tr.appendChild(td);
+    }
+    var as = document.querySelectorAll('a');
+    for (var i = 0; i < as.length; i++) {
+        as[i].onclick = function () {
+            tbody.removeChild(this.parentNode.parentNode);
+        }
+    }
+</script>
+
+</html>

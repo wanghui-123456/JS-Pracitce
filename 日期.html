@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 格式化日期
+        // var date = new Date();
+        // var year = date.getFullYear();
+        // var month = date.getMonth() + 1;
+        // var date = date.getDate();
+        // var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        // var day = date.getDay();
+        // console.log('今天是' + year + '年' + month + '月' + date + '日 ' + arr[day]);
+        // 时分秒格式化
+        function getTime() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h; //三元表达式：如果小时数小于10，则h=0+h,否则显示它本身
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTime());
+        var date1=+new Date();//获得当前时间距离1970年1月1日的总毫秒数，又叫时间戳，永远不会重复，可应用于加密
+        console.log(date1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

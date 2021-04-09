@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //创建一个电脑对象
+        var computer={
+            color:'white',
+            weight:'18kg',
+            brand:'lenovo',
+            type:'T440P',
+            skill:function(){
+                console.log('看电影，打游戏');
+            }
+        }
+        console.log(computer.color);
+        computer.skill();
+        for ( k in computer){  //遍历对象
+            console.log(computer[k]);
+        }
+        function WhatIsthis(){
+            console.log(this);
+        }
+
+        var Date=new Date();
+        console.log(Date);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

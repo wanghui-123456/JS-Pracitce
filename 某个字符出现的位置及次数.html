@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //求字符a出现的位置及次数
+        var str="abcccbaddcxwsffdgacxe";
+        var index=str.indexOf('a');
+        var i=0;
+        while(index!==-1){
+            console.log(index);
+            i++;
+            index=str.indexOf('a',index+1);
+        }
+        console.log(i);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

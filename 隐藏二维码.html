@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        img {
+            width: 200px;
+        }
+        i {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+            top:5px;
+            left:-3px;
+            line-height: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="tupian/QRcode.jpg" alt="">
+        <i class='btn'>×</i>
+    </div>
+    <script>
+        var btn=document.querySelector('.btn');
+        var box=document.querySelector('.box');
+        btn.onclick=function (){
+            box.style.display='none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getTime() {
+            var time = new Date();
+            var year = time.getFullYear();
+            var month = time.getMonth() + 1;
+            var date = time.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var day = time.getDay();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h; //三元表达式：如果小时数小于10，则h=0+h,否则显示它本身
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return year + '年' + month + '月' + date + '日 ' + arr[day] + h + ':' + m + ':' + s;
+        }
+        console.log('当前时间为：' + getTime());
+
+        function countDown(time) {
+            var nowtime = +new Date();//获得当前时间的总毫秒数,时间戳的应用
+            var inputime = +new Date(time);//获得用户输入的时间的总毫秒数
+            var times = (inputime - nowtime) / 1000;//剩余时间的总秒数
+            var d = parseInt(times / 60 / 60 / 24);//把剩余时间的总秒数转换剩余成天数
+            var h = parseInt(times / 60 / 60 % 24);//把剩余时间的总秒数转换成剩余小时数
+            var m = parseInt(times / 60 % 60);//把剩余时间的总秒数转换成分钟数
+            var s = parseInt(times % 60);//秒数
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        console.log('距离跳槽还剩：' + countDown('2021-5-23 12:00:00'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

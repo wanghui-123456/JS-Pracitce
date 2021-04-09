@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(tupian/p1.jpg) no-repeat;
+        }
+
+        ul {
+            width: 500px;
+            margin: 30px auto;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            margin-left: 5px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src="tupian/p6.jpg" alt=""></li>
+        <li><img src="tupian/p3.jpg" alt=""></li>
+        <li><img src="tupian/p4.jpg" alt=""></li>
+        <li><img src="tupian/p5.jpg" alt=""></li>
+    </ul>
+    <script>
+        var pctr = document.getElementsByTagName('img');//括号里写li还是img有什么区别吗？
+        for (var i = 0; i < pctr.length; i++) {
+              pctr[i].onclick = function(){
+                document.body.style.backgroundImage ='url('+this.src+')';
+             }
+         }
+    </script>
+</body>
+
+</html>

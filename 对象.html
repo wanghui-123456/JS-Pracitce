@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.用字面量方式创建一个对象
+        var dog = {
+            name: 'keke',
+            type: 'alask',
+            age: 5,
+            color: 'brand',
+            skill: function () {
+                console.log('bark');
+                console.log('showFilm');
+            }
+        }
+        console.log(dog.name);
+        console.log(dog.type);
+        console.log(dog.age);
+        dog.skill();
+        //2.new Object 方式创建一个对象
+        var person = new Object();
+        person.name = '鸣人';
+        person.sex = 'male';
+        person.age = 18;
+        person.skill = function () {
+            console.log('影分身术');
+        }
+        console.log(person.name);
+        console.log(person.age);
+        person.skill();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

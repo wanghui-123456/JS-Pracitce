@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(65, 55, 55);
+            perspective: 1000px;
+        }
+
+        section {
+            position: relative;
+            width: 300px;
+            height: 230px;
+            margin: 150px auto;
+            transform-style: preserve-3d; 
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate{
+            0%{
+                transform: rotateY(0);
+            }
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+        section:hover {
+            animation-play-state: paused;
+        }
+
+        section div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        section div:first-child {
+            background: url(tupian/p1.jpg) no-repeat;
+            background-size: 100%;
+            transform: translateZ(300px);
+        }
+
+        section div:nth-child(2) {
+            background: url(tupian/p2.jpg) no-repeat;
+            background-size: 100%;
+            transform: rotateY(60deg) translateZ(300px);
+        }
+
+        section div:nth-child(3) {
+            background: url(tupian/p3.jpg) no-repeat;
+            background-size: 100%;
+            transform: rotateY(120deg) translateZ(300px);
+        }
+
+        section div:nth-child(4) {
+            background: url(tupian/p4.jpg) no-repeat;
+            background-size: 100%;
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        section div:nth-child(5) {
+            background: url(tupian/p5.jpg) no-repeat;
+            background-size: 100%;
+            transform: rotateY(240deg) translateZ(300px);
+        }
+
+        section div:last-child {
+            background: url(tupian/p6.jpg) no-repeat;
+            background-size: 100%;
+            transform: rotateY(300deg) translateZ(300px);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>
