@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var arr = [1, 2, 3];
+      arr.push(4,'pink');    // .push() 在数组后面添加元素，里面参数写数组元素  .push返回的是新数组的长度
+      console.log(arr);
+      arr.unshift(6,7,'red');  // .unshift() 在数组前面添加元素，里面参数写数组元素  .unshift返回的也是新数组的长度
+      console.log(arr);
+      arr.pop();  //  .pop() 删除数组最后一个元素（且一次只能删除一个元素），参数为空，返回的是所删除掉的元素
+      console.log(arr);
+      arr.shift();  //  .shift() 删除数组的第一个元素（且一次只能删除一个元素），参数为空，返回的是所删除掉的元素
+      console.log(arr);
+      console.log(arr.shift());
+    </script>
+  </head>
+  <body></body>
+</html>

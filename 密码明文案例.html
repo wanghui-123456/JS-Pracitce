@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        width: 250px;
+        margin: 20px auto;
+        border-bottom: 1px solid rgb(194, 192, 192);
+      }
+      img {
+        position: absolute;
+        width: 28px;
+        top: 30px;
+        right: 0px;
+      }
+      input {
+        border: 0;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>密码:</p>
+      <input type="password" id="ipt" />
+      <img src="images/closeEye.png" alt="" id="imge" />
+    </div>
+    <script>
+      var ipt = document.getElementById("ipt");
+      var imge = document.getElementById("imge");
+      var flag = 0;
+      imge.onclick = function () {
+        if (flag == 0) {
+          ipt.type = "text";
+          imge.src = "images/openEye.png";
+          flag = 1;
+        } else {
+          ipt.type = "password";
+          imge.src = "images/closeEye.png";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>

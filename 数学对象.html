@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //随机整数的函数
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+      }
+
+      // 随机打印一个姓名
+      var arr = ["张三", "李四", "网二", "麻子"];
+      console.log(arr[getRandomIntInclusive(0, arr.length - 1)]);
+
+      // 猜1~15之间的一个数
+      
+      var random=getRandomIntInclusive(1,50) 
+      for (var i=1;i<=5;i++){
+        var num=prompt('你来猜？请输入1~50之间一个随机的数(只有五次机会哦！)');
+          if(num<random){
+              alert('你猜小了');
+          }else if(num>random){
+              alert('你猜大了');
+          }else {
+              alert('恭喜你猜对了！');
+          }
+
+      }
+      alert('您的五次机会已用完！');
+
+    </script>
+  </head>
+  <body></body>
+</html>

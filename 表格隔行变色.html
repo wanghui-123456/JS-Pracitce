@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 50%;
+        margin: 50px auto;
+        border-collapse: collapse; /*双边框合并*/
+        text-align: center;
+      }
+      thead {
+        height: 70px;
+        font-weight: bold;
+        font-size: 20px;
+        background-color: rgb(103, 180, 224);
+        color: white;
+      }
+      tbody {
+        color: gray;
+      }
+      .bg {
+        background-color: rgb(215, 230, 233);
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <td><input type="checkbox" id="j_th" /></td>
+          <td>表头1</td>
+          <td>表头2</td>
+          <td>表头3</td>
+          <td>表头4</td>
+          <td>表头5</td>
+        </tr>
+      </thead>
+
+      <tbody id="j_tb">
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>第一行1</td>
+          <td>第一行2</td>
+          <td>第一行3</td>
+          <td>第一行4</td>
+          <td>第一行5</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>第二行1</td>
+          <td>第二行2</td>
+          <td>第二行3</td>
+          <td>第二行4</td>
+          <td>第二行5</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>第三行1</td>
+          <td>第三行2</td>
+          <td>第三行3</td>
+          <td>第三行4</td>
+          <td>第三行5</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>第四行1</td>
+          <td>第四行2</td>
+          <td>第四行3</td>
+          <td>第四行4</td>
+          <td>第四行5</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var trs = document.querySelector("tbody").querySelectorAll("tr"); //获取tbody所有的行
+      for (i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function () {
+          this.className = "bg";
+        };
+        trs[i].onmouseout = function () {
+          this.className = "";
+        };
+      }
+      var j_th = document.getElementById("j_th");
+      var j_tbs = document.getElementById("j_tb").getElementsByTagName("input");
+      j_th.onclick = function () {
+        for (var j = 0; j < j_tbs.length; j++) {
+          j_tbs[j].checked = this.checked;
+        }
+      };
+ 
+      for (var j = 0; j < j_tbs.length; j++){
+        j_tbs[j].onclick=function(){
+            var flag=true;
+            for (var j = 0; j < j_tbs.length; j++){
+                if(!j_tbs[j].checked){
+                    flag=false;
+                    break;
+                }
+            }
+            j_th.checked=flag;
+        }
+      }
+    </script>
+  </body>
+</html>

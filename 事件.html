@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="anniu">请点击</button>
+    <div>123</div>
+    <p>你好</p>
+    <script>
+      //添加事件，实现点击按钮，div内容变为当前时间
+      // var butt=document.getElementsByTagName('button');  //返回的是html里所有button的集合
+      var butt = document.getElementById("anniu");
+      var divv = document.querySelector("div"); // querySelector() 为H5新增，返回html里的第一个div
+      butt.onclick = function () {
+        divv.innerText = getDate();
+      };
+      function getDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var dates = date.getDate();
+        return '今天是：'+year+'年'+month+'月'+dates+'日';
+      }
+      //不用添加事件，操作DOM，页面加载直接显示
+      var p = document.querySelector('p');
+      p.innerText = '李焕英';
+    </script>
+  </body>
+</html>

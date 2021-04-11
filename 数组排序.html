@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var num = [2, 1, 5, 6, 3, 8];
+      num.reverse(); // 翻转数组，返回颠倒后的数组，注意会破坏原数组
+      console.log(num);
+      var arr = [2, 11, 5, 66, 35, 8];
+      arr.sort(function (a, b) {
+        //return a-b;   //升序的排列顺序
+        return b - a; //降序的排列顺序
+      });
+      console.log(arr);
+
+      //返回数组元素索引号的方法
+      var arr1 = ["red", "blue", "purple", "pink", 3, "yellow", 24, "blue"];
+      console.log(arr1.indexOf("bule")); //从第一个元素开始查找，若没有该元素，则返回-1
+      console.log(arr1.indexOf("blue"));
+      console.log(arr1.lastIndexOf("blue")); //从最后一个元素开始查找，若没有该元素，则返回-1
+      console.log(arr1.lastIndexOf("purple"));
+
+      //数组去重案例
+      function unique(letter) {
+        var letter1 = [];
+        for (var i = 0; i < letter.length; i++) {
+          if (letter1.indexOf(letter[i]) == -1) {
+            letter1.push(letter[i]);
+          }
+        }
+        return letter1;
+      }
+      var demo = unique(["a", "b", "a", "x", "c", "y", "w", "w", "x"]);
+      console.log(demo);
+    </script>
+  </head>
+  <body></body>
+</html>
