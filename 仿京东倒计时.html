@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box ;
+        }
+        div {
+            width: 300px;
+            height: 200px;
+            margin:100px auto;
+            padding:75px 65px;
+            background-color: red; 
+        }
+        .hour,
+        .minute,
+        .second {
+            float: left;
+            margin-right:5px;
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px; 
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+            var hour = document.querySelector('.hour');
+            var minute = document.querySelector('.minute');
+            var second = document.querySelector('.second');
+            var inputime = +new Date('2021-4-18 12:00:00');//获得用户输入的时间的总毫秒数
+            countDown();//先调用一次倒计时函数，防止第一次刷新页面有空白
+            // 开启定时器,每隔一秒钟，调用倒计时函数
+            setInterval(countDown,1000);
+            // 倒计时函数
+            function countDown() {
+            var nowtime = +new Date();//获得当前时间的总毫秒数,时间戳的应用
+            var times = (inputime - nowtime) / 1000;//剩余时间的总秒数
+            var h = parseInt(times / 60 / 60 % 24);//把剩余时间的总秒数转换成剩余小时数
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML=h;
+            var m = parseInt(times / 60 % 60);//把剩余时间的总秒数转换成分钟数
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML=m;
+            var s = parseInt(times % 60);//秒数
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML=s;
+
+        }
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+</body>
+</html>
