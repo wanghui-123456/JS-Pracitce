@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        img {
+           position: relative;
+           width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img src="tupian/Angle.gif" alt=""> 
+    <input type="text">
+    <script>
+        //图片跟随鼠标移动
+         var pic=document.querySelector('img');
+         document.addEventListener('mousemove',function(e){
+            pic.style.top=e.pageY-30 + "px";
+            pic.style.left=e.pageX-30 +'px';
+        })
+        //按下键盘上的s键，光标自动定位到输入框
+        var input = document.querySelector('input');
+        document.addEventListener('keyup',function(e){
+            if(e.keyCode===83){
+                input.focus();
+            }
+        })
+    </script>
+</body>
+</html>

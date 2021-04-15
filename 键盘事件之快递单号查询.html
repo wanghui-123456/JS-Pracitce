@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 200px;
+            height: 80px;
+        }
+        .con {
+            position: absolute;
+            display: none; 
+            top: 5px;
+            width: 180px;
+            height: 30px;
+            padding-left:2px;
+            border: 1px solid pink;
+            border-radius: 10px;
+            line-height: 30px;
+            font-size: 20px;
+            color: darkblue;
+        }
+        input {
+            position: absolute;
+            bottom: 10px;
+            margin-top: 5px;
+            outline: none;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入快递单号">
+    </div>
+    <script>
+        var con = document.querySelector('.con');
+        var input = document.querySelector('input');
+        //输入框中的内容在另一个盒子里放大显示
+        input.addEventListener('keyup',function(){
+            if (this.value==''){
+                con.style.display='none';
+            } else{
+                con.style.display='block';
+                con.innerHTML=this.value;
+            }
+        });
+        //失去焦点时隐藏
+        input.addEventListener('blur',function(){
+            con.style.display='none';
+        });
+        //获得焦点并且输入框不为空时显示
+        input.addEventListener('focus',function(){
+            if(this.value!==''){
+                con.style.display='block'; 
+            }
+        });
+    </script>
+</body>
+</html>
