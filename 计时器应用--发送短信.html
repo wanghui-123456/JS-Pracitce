@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.addEventListener("load", function () {
+        var btn = document.querySelector("button");
+        var time = 5;
+        btn.addEventListener("click", function () {
+          btn.disabled = true;//点击按钮后，马上开启禁用
+          var timer = setInterval(function () { //开始倒计时
+            if (time == 0) { //如果时间到了
+              clearInterval(timer);//让计时器停止计时
+              btn.disabled = false;//取消禁用按钮
+              btn.innerHTML = "点击发送短信";//恢复按钮上的文字内容
+              time = 5; //别忘了恢复计时器的计时的时长
+            } else {
+              btn.innerHTML = "还剩余" + time + "s";
+              time--;
+            }
+          }, 1000);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" />
+      <button>点击发送短信</button>
+    </div>
+  </body>
+</html>
