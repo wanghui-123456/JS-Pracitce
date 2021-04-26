@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 1000px;
+            margin:0 auto;
+        }
+        .row {
+            width: 800px;
+            list-style: none;
+        }
+        li {
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+        ul :first-child {
+            height: 150px;
+            line-height: 150px;
+            background-color: rgb(133, 80, 133);
+        }
+        ul :nth-child(2) {
+            height: 200px;
+            line-height: 200px;
+            background-color: rgb(92, 113, 179);
+        }
+        ul :nth-child(3) {
+            height: 500px;
+            line-height: 500px;
+            background-color: rgb(56, 197, 131);
+        }
+        .fixedbox {
+            display: none;
+            position: absolute;
+            right: 50px;
+            top: 10px;
+            width: 80px;
+            height: 160px;
+            background-color: rgb(187, 179, 186);
+        }
+        .back {
+            display: block;
+            font-size: 18px;
+            text-align: center;
+            color: white;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box w">
+        <ul class="row w">
+            <li class="header">header</li>
+            <li>banner</li>
+            <li>main</li>
+        </ul>
+    </div>
+    <div class="fixedbox">
+        <span class="back">返回顶部</span>
+    </div>
+</body>
+<script>
+    var fixedbox = document.querySelector('.fixedbox');
+    var back = document.querySelector('.back');
+    var header = document.querySelector('.header');
+    var headerTop = header.offsetTop;
+    document.addEventListener('scroll',function(){
+        if (pageYOffset>headerTop){
+            fixedbox.style.display='block'
+            fixedbox.style.position='fixed';
+        }else {
+            fixedbox.style.display='none'
+            fixedbox.style.position='absolute';
+        }
+    });
+    back.addEventListener('click',function(){
+        pageYOffset=0;
+    });
+</script>
+</html>
