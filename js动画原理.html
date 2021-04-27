@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        span {
+            position: absolute;
+            top: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(165, 123, 161);
+        }
+    </style>
+</head>
+<body>
+    <button class="btn500">点击紫色往前走500</button>
+    <button class="btn800">点击紫色往前走800</button>
+    <div></div>
+    <span></span>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var span = document.querySelector('span');
+    var btn500 = document.querySelector('.btn500');
+    var btn800 = document.querySelector('.btn800');
+    //将动画效果封装成函数，obj为目标对象
+    function animate (obj,target,callback){//利用给对象添加属性的方法给不同元素设置不同的定时器
+        clearInterval(obj.timer);//调用函数时先清除定时器，防止多次点击按钮时开启多个定时器，盒子会移动的越来越快
+        obj.timer = setInterval(function(){ 
+            var step = (target-obj.offsetLeft)/20;
+            //将步长值改为整数，不要出现小数
+            step=step>0?Math.ceil(step):Math.floor(step);
+            if(obj.offsetLeft==target){
+               clearInterval(obj.timer);
+               //回调函数写道定时器结束之后
+               if(callback){
+                   callback();
+               }
+            } obj.style.left=obj.offsetLeft + step + "px";
+        },15);
+    }
+    
+    function red (){
+        span.style.backgroundColor='red';
+        span.innerHTML='不可以';
+    };
+
+    animate(div,500);
+    btn500.addEventListener('click',function(){
+        animate(span,500);
+    });
+    btn800.addEventListener('click',function(){
+        animate(span,800,red);//给缓动动画添加回调函数
+    })
+//匀速动画，让盒子每次移动固定的值，即盒子当前位置+固定值
+//缓动动画，让盒子每次移动的值递减，即盒子当前位置+变化的值（变化公式：（目标值-当前位置）/ 10）
+
+
+</script>
+</html>
