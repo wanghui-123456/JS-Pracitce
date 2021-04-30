@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="JS/animate.js"></script>
+    <script src="JS/index.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 字体声明 */
+        @font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?vj3esr');
+  src:  url('fonts/icomoon.eot?vj3esr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?vj3esr') format('truetype'),
+    url('fonts/icomoon.woff?vj3esr') format('woff'),
+    url('fonts/icomoon.svg?vj3esr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+        }
+
+         li {
+             list-style: none; 
+             float: left;
+        }
+        .slide-bar {
+            position: relative;
+            margin:0 auto;
+            width: 590px;
+            height: 470px;
+            overflow: hidden; 
+        }
+        .arrow-l,
+        .arrow-r {
+            display: none;
+            position: absolute;
+            top:50%;
+            transform: translate(0,-50%);
+            width: 50px;
+            height: 50px;
+            font-family: 'icomoon';
+            font-size: 40px;
+            color: gray;
+            text-align: center;
+            cursor: pointer;
+        }
+        .arrow-l:hover,
+        .arrow-r:hover {
+            color: white;
+        }
+        .arrow-l {
+            left: 0;
+        }
+        .arrow-r {
+            right: 0;
+        }
+        ol {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            left:50%;
+            bottom: 10px;
+            height: 20px;
+            background-color: rgba(172, 166, 166, 0.5);
+            transform: translate(-50%,0);
+            border-radius: 15px;
+            padding:0 10px 0 5px;
+            cursor: pointer;
+        }
+        ol li {
+            width: 10px;
+            height: 10px;
+            border-radius: 25px;
+            background-color:gray;
+            margin-left: 5px;
+        } 
+        .current {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-bar">
+        <ul>
+            <li><img src="images/pic1.jpg" alt=""></li>
+            <li><img src="images/pic2.jpg.webp" alt=""></li>
+            <li><img src="images/pic3.jpg" alt=""></li>
+            <li><img src="images/pic4.jpg.webp" alt=""></li>
+            <li><img src="images/pic5.jpg" alt=""></li>
+        </ul>
+        <div class="arrow-l"></div>
+        <div class="arrow-r"></div>
+        <ol>
+        </ol>
+    </div>
+</body>
+</html>
