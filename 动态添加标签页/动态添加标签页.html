@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 字体声明 */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?pcga3f');
+            src: url('fonts/icomoon.eot?pcga3f#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?pcga3f') format('truetype'),
+                url('fonts/icomoon.woff?pcga3f') format('woff'),
+                url('fonts/icomoon.svg?pcga3f#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .firstnav {
+            position: relative;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h3 {
+            width: 245px;
+            margin: 10px auto;
+        }
+
+        .wrapbox {
+            width: 700px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid orangered;
+        }
+
+        .lablepages li {
+            position: relative;
+            float: left;
+            width: 80px;
+            height: 45px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 45px;
+            border-right: 1px solid rgb(177, 174, 174);
+            border-bottom: 1px solid rgb(177, 174, 174);
+            cursor: default;
+        }
+
+        .close-icon {
+            position: absolute;
+            font-family: 'icomoon';
+            top: -14px;
+            right: 0;
+            cursor: pointer;
+        }
+
+        .addmore {
+            position: absolute;
+            right: 18px;
+            top: 16px; 
+            font-family: 'icomoon';
+            font-size: 6px;
+            cursor: pointer;
+        }
+
+        .tab-content {
+            position: relative;
+        }
+        .content1 {
+            position: absolute;
+            top: 45px;
+            left: 10px;
+            padding-top: 10px;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>JS面向对象，动态添加标签页</h3>
+
+    <div class="wrapbox" id="wrap">
+        <!-- tab 标签 -->
+        <nav class="firstnav">
+            <ul class="lablepages">
+                <li>测试1<span class="close-icon"></span></li>
+                <li>测试2<span class="close-icon"></span></li>
+                <li>测试3<span class="close-icon"></span></li>
+            </ul>
+            <div class="add"><span class="addmore"></span></div>
+        </nav>
+
+        <!-- tab 内容 -->
+        <div class="tab-content">
+            <section class="content1">测试1的内容</section>
+        </div>
+    </div>
+</body>
+
+</html>
