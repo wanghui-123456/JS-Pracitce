@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="tab.js"></script>
     <style>
         /* 字体声明 */
         @font-face {
@@ -45,18 +46,25 @@
             border: 1px solid orangered;
         }
 
+        .lablepages {
+            height: 45px;
+            border-bottom: 1px solid rgb(177, 174, 174);    
+        } 
+
         .lablepages li {
             position: relative;
             float: left;
             width: 80px;
-            height: 45px;
             font-size: 14px;
             text-align: center;
-            line-height: 45px;
+            line-height: 46px;
             border-right: 1px solid rgb(177, 174, 174);
-            border-bottom: 1px solid rgb(177, 174, 174);
             cursor: default;
         }
+
+        .liactive {
+            background-color: white;
+        } 
 
         .close-icon {
             position: absolute;
@@ -69,7 +77,7 @@
         .addmore {
             position: absolute;
             right: 18px;
-            top: 16px; 
+            top: 16px;
             font-family: 'icomoon';
             font-size: 6px;
             cursor: pointer;
@@ -78,13 +86,19 @@
         .tab-content {
             position: relative;
         }
-        .content1 {
+
+        section {
+            display: none;
+        }
+        .content {
+            display: block;
             position: absolute;
             top: 45px;
             left: 10px;
             padding-top: 10px;
-            width: 100px;
-            height: 50px;
+            width: 600px;
+            height: 250px;
+            border: 1px solid gray;
         }
     </style>
 </head>
@@ -96,7 +110,7 @@
         <!-- tab 标签 -->
         <nav class="firstnav">
             <ul class="lablepages">
-                <li>测试1<span class="close-icon"></span></li>
+                <li class="liactive">测试1<span class="close-icon"></span></li>
                 <li>测试2<span class="close-icon"></span></li>
                 <li>测试3<span class="close-icon"></span></li>
             </ul>
@@ -105,7 +119,9 @@
 
         <!-- tab 内容 -->
         <div class="tab-content">
-            <section class="content1">测试1的内容</section>
+            <section class="content">测试1的内容</section>
+            <section>测试2的内容</section>
+            <section>测试3的内容</section>
         </div>
     </div>
 </body>

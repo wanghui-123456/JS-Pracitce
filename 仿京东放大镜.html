@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .pre-view {
+      position: relative;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgb(214, 211, 211);
+    }
+
+    .mask {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background-color: rgba(235, 243, 118, 0.5);
+      cursor: move;
+    }
+
+    .magnify {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 460px;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgb(214, 211, 211);
+      overflow: hidden;
+    }
+
+    .big {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pre-view">
+    <img src="tupian/iphone.jpg" alt="" />
+    <div class="mask"></div>
+    <div class="magnify">
+      <img src="tupian/iPhonePlus.jpg" alt="" class="big" />
+    </div>
+  </div>
+  <script>
+    var preview = document.querySelector(".pre-view");
+    var mask = document.querySelector(".mask");
+    var magnify = document.querySelector(".magnify");
+    preview.addEventListener('mouseover', function () {
+      mask.style.display = 'block';
+      magnify.style.display = 'block';
+    });
+    preview.addEventListener('mouseout', function () {
+      mask.style.display = 'none';
+      magnify.style.display = 'none';
+    });
+    preview.addEventListener('mousemove', function (e) {
+      //算出鼠标在pre-view盒子里的坐标
+      var x = e.pageX - this.offsetLeft;
+      var y = e.pageY - this.offsetTop;
+      //将鼠标在pre-view盒子里的坐标赋值给遮罩层mask盒子，如果要让光标显示在mask盒子的正中央，mask的top和left值还应移动自身的一半
+      var maskX = x - mask.offsetWidth / 2;
+      var maskY = y - mask.offsetHeight / 2;
+      //mask盒子的最大移动距离
+      var maskMax = preview.offsetWidth - mask.offsetWidth;
+      //mask盒子不应该超过pre-view盒子的范围
+      if (maskX < 0) {
+        maskX = 0;
+      } else if (maskX > maskMax) {
+        maskX = maskMax;
+      }
+      if (maskY < 0) {
+        maskY = 0;
+      } else if (maskY > maskMax) {
+        maskY = maskMax;
+      }
+      mask.style.left = maskX + 'px';
+      mask.style.top = maskY + 'px';
+      //大图的移动距离=mask盒子的移动距离*大图的最大移动距离/mask盒子移动的最大距离
+      var bigImg = document.querySelector('.big');
+      //计算大图的最大移动距离
+      var bigMax = bigImg.offsetWidth - magnify.offsetWidth;
+      //大图的移动距离x,y
+      var bigImgX = maskX * bigMax / maskMax;
+      var bigImgY = maskY * bigMax / maskMax;
+      bigImg.style.left = -bigImgX + 'px';
+      bigImg.style.top = -bigImgY + 'px';
+
+    });
+  </script>
+</body>
+
+</html>
